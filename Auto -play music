@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>She Said YES 💘</title>
+
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 48px;
+    }
+
+    p {
+      font-size: 22px;
+    }
+
+    .heart {
+      position: absolute;
+      font-size: 26px;
+      animation: float 4s linear infinite;
+    }
+
+    @keyframes float {
+      from { transform: translateY(100vh); }
+      to { transform: translateY(-10vh); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Auto-play music (allowed because user clicked YES) -->
+  <audio autoplay loop>
+    <source src="romantic.mp3" type="audio/mpeg">
+  </audio>
+
+  <div>
+    <h1>Fena said YES!!! 💖💖💖</h1>
+    <p>You just made me the happiest 😘</p>
+    <p>Happy Valentine’s Day 🌹</p>
+  </div>
+
+  <script>
+    setInterval(() => {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.textContent = "💖";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (2 + Math.random() * 3) + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => heart.remove(), 5000);
+    }, 300);
+  </script>
+
+</body>
+</html>
